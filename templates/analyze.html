@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Analyze Page</title>
+</head>
+<body>
+    <h1>Analyze Results</h1>
+    {% if results and results|length > 0 %}
+        <ul>
+            {% for result in results %}
+                <li>
+                    Symbol: {{ result['symbol'] }}, Action: {{ result['action'] }}, RSI: {{ result['rsi'] }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nothing to buy or sell yet.</p>
+    {% endif %}
+
+    <button onclick="window.location.href='/';">Go to Main Page</button>
+</body>
+</html>
